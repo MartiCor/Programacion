@@ -25,10 +25,10 @@ public class notes {
                 i--;
             }
         }
-    if (exc == true) {
-        System.out.println("Sí, hi ha almenys un alumne amb un 10");
-    } else {
-        System.out.println("No, no hi ha cap alumne amb un 10");
-    }
+        if (exc) {
+            System.out.println("Sí, hi ha almenys un alumne amb un 10");
+        } else {
+            System.out.println("No, no hi ha cap alumne amb un 10");
+        }
     }
 }
