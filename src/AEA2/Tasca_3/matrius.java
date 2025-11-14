@@ -24,7 +24,7 @@ public class matrius{
         System.out.println("------------");
         for (i = 0; i < matriu.length; i++) {
             for (j = 0; j < matriu[i].length; j++) {
-                System.out.print(matriu[i][j]);
+                System.out.print(matriu[i][j] + " ");
             }
             System.out.println();
         }
