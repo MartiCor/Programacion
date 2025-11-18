@@ -11,11 +11,6 @@ public class matrius{
         int [][] matriu = new int [i][j];
         int major = -999;
         int menor = 999;
-        //int fila = matriu.length;
-        //int columna = matriu[i].length;
-
-        // System.out.println(fila);
-        // System.out.println(columna);
 
         for (i = 0; i < matriu.length; i++) {
             for (j = 0; j < matriu[i].length; j++) {
