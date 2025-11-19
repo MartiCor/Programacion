@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class notas {
     public static void main(String[] args) {
 
-        Scanner a = new Scanner(Syste.in);
+        Scanner a = new Scanner(System.in);
         double [] nota = new double[30];
         int aprovats = 0;
         int suspesos = 0;
@@ -14,14 +14,14 @@ public class notas {
 
         for (int i = 0; i < nota.length; i++) {
             System.out.println("Introdueix la nota " +(i+1));
-            nota[i] = a.nextDouble;
-            if (nota[i] >= 0 && nota[i] >= 10) {
+            nota[i] = a.nextDouble();
+            if (nota[i] >= 0 && nota[i] <= 10) {
                 total = total + nota[i];
                 if (nota[i] > Millor) {
                     Millor = nota[i];
                 }
                 if (nota[i] < Pitjor) {
-                    Millor = nota[i];
+                    Pitjor = nota[i];
                 }
                 if (nota[i] >= 5) {
                     aprovats = aprovats + 1;
@@ -30,10 +30,12 @@ public class notas {
                 }
             } else {
                 System.out.println("Nota no vàlida");
+                i--;
             }
         }
-        mitja = total/30
+        mitja = total/30;
+        System.out.println("La nota mitjana és: " + mitja);
         System.out.println("La nota més alta és: " + Millor);
-        System.out.println("La nota més baixa és: " + Pitjor)
+        System.out.println("La nota més baixa és: " + Pitjor);
     }
 }
