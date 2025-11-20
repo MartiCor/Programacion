@@ -7,6 +7,8 @@ public class encuesta {
         int [] valoracio = new int[20];
         int exc = 0;
         int sus = 0;
+        int total = 0;
+        double mitjana = 0;
 
         for (int i = 0; i < valoracio.length; i++) {
             System.out.println("Quina és la valoració de la persona "+ (i+1));
@@ -15,6 +17,7 @@ public class encuesta {
                 System.out.println("Nota no vàlida");
                 i--;
             } else {
+                total += valoracio[i];
                 if (valoracio[i] == 5) {
                     exc = exc + 1;
                 }
@@ -23,7 +26,9 @@ public class encuesta {
                 }
             }   
         }
-    System.out.println("La quantitat de 5 ha estat: " + exc);
-    System.out.println("La quantitat de valoraciones més baixes de 3 ha estat: " + sus);
+        mitjana = total/20;
+        System.out.println("La nota mitjana és: " + mitjana);
+        System.out.println("La quantitat de 5 ha estat: " + exc);
+        System.out.println("La quantitat de valoraciones més baixes de 3 ha estat: " + sus);
     }
 }

@@ -26,10 +26,10 @@ public class suspes {
                 i--;
             }
         }
-    if (suspes) {
-        System.out.println("Almenys un alumne ha suspès");
-    } else {
-        System.out.println("Cap alumne ha suspès");
-    }
+        if (suspes) {
+            System.out.println("Almenys un alumne ha suspès");
+        } else {
+            System.out.println("Cap alumne ha suspès");
+        }
     }
 }

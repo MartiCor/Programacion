@@ -33,7 +33,7 @@ public class ventas {
             System.out.print(venta[i]+ " ");
         }
         System.out.println();
-        mitjana = total/10;
+        mitjana = total/venta.length;
         System.out.println("El preu mitja ha estat: " + mitjana);
         System.out.println("El preu més gran ha estat: " + Pmax);
         System.out.println("El preu més petit ha estat: " + Pmen);

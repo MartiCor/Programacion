@@ -1,7 +1,7 @@
 public class parells {
     public static void main(String[] args){
 
-        int[] arrayNum = new int[101];
+        int[] arrayNum = new int[100];
         int mida = arrayNum.length;
         int i = 0;
         int num = 0;

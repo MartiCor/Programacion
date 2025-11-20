@@ -22,7 +22,7 @@ public class cambiar{
                 if (i % 2 != 0 && j % 2 != 0) {
                     matriu [i][j] = 4;
                 }
-            System.out.print(matriu[i][j]);
+                System.out.print(matriu[i][j]);
             }
         System.out.println();
         }
