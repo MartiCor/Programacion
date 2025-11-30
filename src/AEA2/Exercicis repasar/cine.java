@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class cine {
     public static void main (String[] args) {
-
+        //
         Scanner a = new Scanner(System.in);
         int [][] sala = new int [2][3];
         int reserva = 1;
-
+        //
         int libres = 0;
         int ocupadas = 0;
-
+        //
         for (int i = 0; i < sala.length; i++) {
             for (int j = 0; j < sala[i].length; j++) {
                 System.out.println("Introdueix 0 si esta lliure, introdueix 1 si esta ocupada i introdueix 2 si esta reservada");
@@ -32,10 +32,10 @@ public class cine {
             }
             System.out.println();
         }
-
+        //
         System.out.println("Queden un total de " + libres + " lliures");
         System.out.println("Hi ha un total de " + ocupadas + " Ocupats");
-
+        //
         while (reserva != 2) {
             System.out.println("Vols fer una reserva?\n1 --> Si\n2 --> No");
             reserva = a.nextInt();
