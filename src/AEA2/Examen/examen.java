@@ -17,20 +17,14 @@ public class examen{
             vector[i] = a.nextInt();
         }
         System.out.println("Introdueix els valors del segon vector");
-        for (int j = 0; j < vector2.length; j++) {
+        for (i = 0; i < vector2.length; i++) {
             System.out.println("Introdueix el valor de la posicio " + i + " del vector 2:");
-            vector2[j] = a.nextInt();
-        }
-        for (i = 0; i < vector.length; i++) {
-            for (int j = 0; j < vector2.length; j++) {
-                if (i == j) {
-                    suma[i] = vector[i] + vector2[j];
-                }
-            }    
+            vector2[i] = a.nextInt();
         }
         System.out.println("La suma dels vectors és la següent");
-        for (i = 0; i < suma.length; i++) {
+        for (i = 0; i < vector.length; i++) {
+            suma[i] = vector[i] + vector2[i];
             System.out.print(suma[i] + " ");
-        }
+        }       
     }
 }
