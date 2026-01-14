@@ -9,12 +9,12 @@ public class llegirReals {
     }
 
     public void inici() {
-    System.out.println("LLegiu un número real per teclat");
-    Double Num = LlegirNum();
-    System.out.println("El número real es el següent: " + Num);
-    System.out.println("Llegiu un altre número real pel teclat");
-    Num = LlegirNum();
-    System.out.println("El segon número és: "+ Num);
+        System.out.println("LLegiu un número real per teclat");
+        Double Num = LlegirNum();
+        System.out.println("El número real es el següent: " + Num);
+        System.out.println("Llegiu un altre número real pel teclat");
+        Num = LlegirNum();
+        System.out.println("El segon número és: "+ Num);
 
     }
 
