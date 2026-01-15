@@ -1,4 +1,4 @@
-1import java.util.Scanner;
+import java.util.Scanner;
 
 public class Multiples {
     public static void main(String[] args) {
@@ -16,6 +16,6 @@ public class Multiples {
             }
             i++;
         }
-         System.out.println("La suma dels multiples és: " + suma);
+        System.out.println("La suma dels multiples és: " + suma);
     }
 }
