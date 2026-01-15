@@ -1,36 +1,38 @@
 package AEA3.Tasca2;
 
 public class CalcularArea {
-    public double Area(String Figura) {
-        double area = 0;
-        if (Figura.equals("triangle")) {
-            double b = 23.0;
-            double h = 8.0;
-            area = (b*h)/2;
-        } else if(Figura.equals("quadrat")) {
-            double b = 37.0;
-            area = b*b;
-        } else if(Figura.equals("rectange")) {
-            double b = 68;
-            double h = 39;
-            area = b*h;
-        } else if (Figura.equals("trapezi")) {
-            double a = 35;
-            double b = 16;
-            double h = 5;
-            area = ((a*b)*h)/2;
-        } else if (Figura.equals("rombe")) {
-            double dM = 75;
-            double dm = 30;
-            area = (dM+dm)/2;
-        } else if (Figura.equals("paralelogram")) {
-            double b = 45;
-            double h = 13;
-            area = b*h;
-        } else if (Figura.equals("cercle")) {
-            double radi = 14;
-            area = radi*radi*3.1415;
-        }
-    return area;    
+    public double AreaTriangle(double base, double altura) {
+        double area = base * altura/2;
+        return area;    
+    }
+
+    public double AreaRectangle(double base, double altura) {
+        double area = base * altura;
+        return area;
+    }
+
+    public double AreaQuadrat(double costat) {
+        double area = costat * costat;
+        return area;
+    }
+
+    public double AreaTrapezi(double base1, double base2, double altura) {
+        double area = (base1+base2)*altura/2;
+        return area;
+    }
+
+    public double AreaRombe(double dM, double dm) {
+        double area = dM*dm/2;
+        return area;
+    }
+
+    public double AreaParalelogram(double base, double altura) {
+        double area = base * altura;
+        return area;
+    }
+
+    public double AreaCercle(double radi) {
+        double area = radi*radi*3.1415;
+        return area;
     }
 }
