@@ -9,7 +9,7 @@ public class CalculArees {
 
   public void inici() {
     System.out.println("De quina figura vols calcular l'area?");
-    System.out.println("Tens les següents opcions: triangle, quadrat, rectangle, trapezi, rombe paralelogram o cercle.");
+    System.out.println("Tens les següents opcions: triangle, quadrat, rectangle, trapezi, rombe, paralelogram o cercle.");
 
     SeleccionarFigura selector = new SeleccionarFigura();
     CalcularArea calcul = new CalcularArea();
@@ -24,4 +24,3 @@ public class CalculArees {
 
   }
 }
-
