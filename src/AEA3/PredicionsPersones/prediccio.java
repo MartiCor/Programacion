@@ -78,7 +78,7 @@ public class prediccio {
         if (equivocat) {
             a = "T'has equivocat escribint el teu més de naixement, torna-ho a intentar";
         } else {
-            a = "Segons les dades introduiedes el teu numero de la sort és " + numSort + ", el teu equipo de Futbol és " + equipFutbol + "i el teu llenguatge de programacio preferit és " + llenguatgeProgramacio + ".";
+            a = "Segons les dades introduides el teu numero de la sort és el " + numSort + ", el teu equipo de Futbol és el " + equipFutbol + " i el teu llenguatge de programacio preferit és " + llenguatgeProgramacio + ".";
         }
         return a;
     }
