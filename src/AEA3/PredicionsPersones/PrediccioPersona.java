@@ -28,7 +28,6 @@ public class PrediccioPersona {
                     System.out.println();
                     System.out.println("Escriu el mes en què vas nèixer.");
 
-
                     String mesNaixement = recollir.string();
                     System.out.println("Com et dius?");
 
@@ -36,9 +35,15 @@ public class PrediccioPersona {
                     System.out.println("Per acabar, quants anys tens?");
 
                     int edat = recollir.numEnter();
-                    prediccio fer = new prediccio();
-                    String resultat = fer.Prediccio(mesNaixement, nom, edat);
-                    System.out.println(resultat);
+                    prediccions prediccio = new prediccions();
+                    String equip = prediccio.equip(mesNaixement, nom, edat);
+                    String llenguatge = prediccio.llenguatge(mesNaixement, nom, edat);
+                    int numSort = prediccio.num(mesNaixement, nom, edat);
+                    if (equip.equals("incorrecte")) {
+                        System.out.println("Has introduit malament el teu mes de naixament");
+                    } else {
+                        System.out.println("El teu numero de la sort és el " + numSort + ", el teu equip de futbol és el " + equip + "i el teu llenguatge de programacio preferit és el " + llenguatge);
+                    }
                     break;
                 case 2:
                     acabarPrograma decisio = new acabarPrograma();
@@ -47,7 +52,7 @@ public class PrediccioPersona {
                     break;
                 default:
                     System.out.println("Valor incorrecte, escull entre el 1 i el 2");
-                    break;
+                    //break;
             }
         }
     }
