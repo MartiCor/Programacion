@@ -1,4 +1,6 @@
 package AEA3.PredicionsPersones;
+import utilidades.recollirDades;
+
 
 public class PrediccioPersona {
     public static void main(String[] args) {

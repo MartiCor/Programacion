@@ -1,4 +1,4 @@
-package AEA3.PredicionsPersones;
+package utilidades;
 
 import java.util.Scanner;
 
@@ -23,6 +23,18 @@ public class recollirDades {
         }
 
         dato = a.nextInt();
+        a.nextLine();
+        return dato;
+    }
+
+    public double numReal() {
+        double dato = 0;
+        while (!a.hasNextDouble()) {
+            System.out.println("Valor no vàlid, introdueix un nombre Real");
+            a.next();
+        }
+    
+        dato = a.nextDouble();
         a.nextLine();
         return dato;
     }
