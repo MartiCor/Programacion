@@ -23,7 +23,7 @@ public class principal {
             switch (opcio) {
                 case 1:
                     for (int i = 0 + totalNotes; i < 5 + totalNotes; i++) {
-                        System.out.println("Quina es la nota " + (i+1) + "?");
+                        System.out.println("Quina és la nota " + (i+1) + "?");
                         notes[i] = recollir.numReal();
                         if (notes[i] < 0 || notes [i] > 10) {
                             System.out.println("Valor incorrecte, la nota ha d'estar entre el 0 i el 10!");
@@ -35,7 +35,7 @@ public class principal {
                     break;
                 case 2: 
                     double notaMaxima = calcul.maxim(notes, totalNotes);
-                    System.out.println("La nota máxima és: " + notaMaxima);
+                    System.out.println("La nota màxima és: " + notaMaxima);
                     System.out.println();
                     break;
                 case 3:
