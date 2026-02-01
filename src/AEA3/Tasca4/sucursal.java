@@ -1,13 +1,13 @@
 package AEA3.Tasca4;
 
-public class empresa {
+public class sucursal {
     String nom;
     String adreça;
     String telefon;
     String mail;
 
 
-    public empresa(String nom, String adreça, String telefon, String mail) {
+    public sucursal(String nom, String adreça, String telefon, String mail) {
         this.nom = nom;
         this.adreça = adreça;
         this.telefon = telefon;

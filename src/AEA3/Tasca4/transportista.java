@@ -16,7 +16,7 @@ public class transportista {
 
     }
 
-    public void anularEncarrec(encarrec e) {
+    public void anullarEncarrec(encarrec e) {
         
     }
 }
