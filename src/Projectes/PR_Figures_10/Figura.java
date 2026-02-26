@@ -1,4 +1,4 @@
-package Projectes.PR_Figures;
+package Projectes.PR_Figures_10;
 
 public class Figura {
     private static int id;
@@ -42,9 +42,11 @@ public class Figura {
         return Area;
     }
 
+
     public void imprimirDades() {
         System.out.println("----------- " + figura + " -----------");
         System.out.println("L'area del " + figura + " és: " + Area + " m2.");
         System.out.println("El ID de la figura és: " + id + ".");
+        System.out.println();
     }
 }

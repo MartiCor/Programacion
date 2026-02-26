@@ -8,6 +8,12 @@ public class principal {
             quadrat1.imprimirDades();
             System.out.println();
 
+            Quadrat quadrat2 = new Quadrat(5);
+            double AreaQuadrat2 = quadrat2.calcularArea(quadrat1.getCostat());
+            quadrat2.setArea(AreaQuadrat2);
+            quadrat2.imprimirDades();
+            System.out.println();
+
             Triangle triangle1 = new Triangle(7, 3);
             double AreaTriangle = triangle1.calcularArea(triangle1.getBase(), triangle1.getAltura());
             triangle1.setArea(AreaTriangle);
@@ -17,7 +23,8 @@ public class principal {
             Rectangle rectangle1 = new Rectangle();
             rectangle1.setCostat1(6);
             rectangle1.setCostat2(4);
-            rectangle1.setArea(rectangle1.calcularArea(rectangle1.getCostat1(), rectangle1.getCostat2()));
+            double AreaRectangle = rectangle1.calcularArea(rectangle1.getCostat1(), rectangle1.getCostat2());
+            rectangle1.setArea(AreaRectangle);
             rectangle1.imprimirDades();
             System.out.println();
 
