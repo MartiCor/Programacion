@@ -5,7 +5,7 @@ public class Quadrat extends Figura {
     public double Area;
 
     public Quadrat() {
-
+        super("quadrat");
     }
 
     public Quadrat(double costat ) {

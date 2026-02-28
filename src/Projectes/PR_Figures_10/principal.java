@@ -39,9 +39,9 @@ public class principal {
                             }
                             break;
                         case 2: 
-                            System.out.println("Quina és la base del triangle?");
-                            double base = recollir.numReal();
-                            System.out.println("Quina és l'altura del triangle");
+                        System.out.println("Quina és la base del triangle?");
+                        double base = recollir.numReal();
+                        System.out.println("Quina és l'altura del triangle");
                             double altura = recollir.numReal();
                             if (azar == 0) {
                                 Triangle triangle = new Triangle(base, altura);

@@ -8,7 +8,7 @@ public class Triangle extends Figura {
 
 
     public Triangle() {
-        super();
+        super("triangle");
     }
 
 

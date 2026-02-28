@@ -5,7 +5,7 @@ public class Cercle extends Figura {
     private double Area;
 
     public Cercle() {
-
+        super("cercle");
     }
 
     public Cercle(double radi) {

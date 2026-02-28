@@ -6,7 +6,7 @@ public class Paralelogram extends Figura {
     private double Area;
 
     public Paralelogram() {
-
+        super("paralelogram");
     }
 
     public Paralelogram(double base, double altura) {

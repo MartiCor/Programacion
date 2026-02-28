@@ -6,7 +6,7 @@ public class Rombe extends Figura {
     private double Area;
 
     public Rombe() {
-
+        super("rombe");
     }
 
     public Rombe(double dM, double dm){

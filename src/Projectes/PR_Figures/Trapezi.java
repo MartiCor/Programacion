@@ -7,7 +7,7 @@ public class Trapezi extends Figura {
     private double Area;
 
     public Trapezi() {
-
+        super("trapezi");
     }
 
     public Trapezi(double base1, double base2, double altura) {
