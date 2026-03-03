@@ -20,7 +20,6 @@ public class principal {
                     mostrar.MenuFigures();
                     figura = recollir.numEnter();
                     int azar = random.nextInt(2);
-                    System.out.println(azar);
                     switch (figura) {
                         case 1:
                             System.out.println("Quin és el radi del cercle?");
