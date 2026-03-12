@@ -19,6 +19,7 @@ public class CasaRural extends Allotjament {
     public void setJardi(boolean nouJardi) {
         teJardi = nouJardi;
     }
+
     public void setPisccina(boolean novaPiscina) {
         tePiscina = novaPiscina;
     }
@@ -26,17 +27,39 @@ public class CasaRural extends Allotjament {
     public boolean getJardi() {
         return teJardi;
     }
+
     public boolean getPiscina() {
         return tePiscina;
     }
 
-
-    public double calcularPreuPerNit() {
+    public double calcularPreuPerNit(boolean piscina) {
+        if(piscina == true) {
+            preu = 150 +50;
+        } else {
+            preu = 150;
+        }
         return preu;
     }
 
     public String mostrarInformacio() {
-        info = tipusAllotjament + ": " + nom + " (Jardí: Sí, PIscina: Sí) - Disponible";
+        String Nom = getNom();
+        String TipusAllotjament = getTipusAllotjament();
+        String piscina;
+        String jardi;
+
+        if (tePiscina == true) {
+            piscina = "Sí";
+        } else {
+            piscina = "No";
+        }
+
+        if (teJardi == true) {
+            jardi = "Sí";
+        } else {
+            jardi = "No";
+        }
+
+        info = TipusAllotjament + ": " + Nom + " (Jardí: "+ jardi +  ", Piscina: " + piscina + " ) - Disponible";
         return info;
     }
 }

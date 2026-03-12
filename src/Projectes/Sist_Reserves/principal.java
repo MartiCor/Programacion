@@ -8,42 +8,42 @@ public class principal {
         int opcio;
         menus mostrar = new menus();
         recollirDades recollir = new recollirDades();
-        Habitacio habitacio1 = new Habitacio("Habitació 101", 3, 3);
-        Apartament apartament1 = new Apartament("Apartament Blue", 4, 2, true);
+        Habitacio habitacio1 = new Habitacio("Habitació 101", 3, 5);
+        Apartament apartament1 = new Apartament("Apartament Blue", 4, 2, false);
         CasaRural casa1 = new CasaRural("Masia Verda", 8, true, false);
         Habitacio habitacio2 = new Habitacio("Habitació 202", 2, 1);
         CasaRural casa2 = new CasaRural("Can Soler", 1, true, true);
 
-        while(!acabar) {
+        while (!acabar) {
             mostrar.menu();
             System.out.println("Quina opció vols fer?");
             opcio = recollir.numEnter();
             switch (opcio) {
                 case 1:
                     System.out.println("------- Allotjaments Disponibles -------");
-                    if(habitacio1.getDisponibilitat() == true) {
+                    if (habitacio1.getDisponibilitat() == true) {
                         String info1 = habitacio1.mostrarInformacio();
                         System.out.println(info1);
                     }
-                    if(apartament1.getDisponibilitat() == true) {
+                    if (apartament1.getDisponibilitat() == true) {
                         String info2 = apartament1.mostrarInformacio();
                         System.out.println(info2);
                     }
-                    if(casa1.getDisponibilitat()) {
+                    if (casa1.getDisponibilitat()) {
                         String info3 = casa1.mostrarInformacio();
                         System.out.println(info3);
                     }
-                    if(habitacio2.getDisponibilitat() == true) {
+                    if (habitacio2.getDisponibilitat() == true) {
                         String info4 = habitacio2.mostrarInformacio();
                         System.out.println(info4);
                     }
-                    if(casa2.getDisponibilitat() == true) {
+                    if (casa2.getDisponibilitat() == true) {
                         String info5 = casa2.mostrarInformacio();
                         System.out.println(info5);
                     }
                     System.out.println();
                     break;
-                case 2: 
+                case 2:
                     System.out.println();
                     System.out.print("Escriu el nom del allotjament que vols reservar: ");
                     String allotjament = recollir.string().toLowerCase();
@@ -90,5 +90,5 @@ public class principal {
                     break;
             }
         }
-    } 
+    }
 }

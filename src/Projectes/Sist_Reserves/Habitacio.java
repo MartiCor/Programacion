@@ -22,12 +22,19 @@ public class Habitacio extends Allotjament {
     }
 
 
-    public double calcularPreuPerNit() {
+    public double calcularPreuPerNit(int llits) {
+        if(llits >= 3) {
+            preu = 50 + ((llits-2)*20);
+        } else {
+            preu = 50;
+        }
         return preu;
     }
 
     public String mostrarInformacio() {
-        info = tipusAllotjament + ": " + nom + " (Llits: " + numLlits + ") - Disponible";
+        String Nom = getNom();
+        String TipusAllotjament = getTipusAllotjament();
+        info = TipusAllotjament + ": " + Nom + " (Llits: " + numLlits + ") - Disponible";
         return info;
     }
 }

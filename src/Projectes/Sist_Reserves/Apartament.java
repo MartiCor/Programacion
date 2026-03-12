@@ -32,12 +32,22 @@ public class Apartament extends Allotjament {
 
 
 
-    public double calcularPreuPerNit() {
+    public double calcularPreuPerNit(int habitacio) {
+        preu = 100 + (habitacio*10);
         return preu;
     }
 
     public String mostrarInformacio(){
-        info = tipusAllotjament + ": " + nom + " (Habitacions: " + habitacions + ", Cuina: Sí) - Disponible";
+        String Nom = getNom();
+        String TipusAllotjament = getTipusAllotjament();
+        String cuina;
+        if(teCuina == true) {
+            cuina = "Sí";
+        } else {
+            cuina = "No";
+        }
+
+        info = TipusAllotjament + ": " + Nom + " (Habitacions: " + habitacions + ", Cuina: " + cuina + ") - Disponible";
         return info;
     }
 }

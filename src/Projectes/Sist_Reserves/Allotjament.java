@@ -1,10 +1,10 @@
 package Projectes.Sist_Reserves;
 
 public class Allotjament {
-    String nom;
+    private String nom;
     private int capacitat;
     private boolean disponible;
-    String tipusAllotjament;
+    private String tipusAllotjament;
     private double preu;
     private String info;
 
@@ -21,26 +21,32 @@ public class Allotjament {
 
     public void setNom(String nouNom) {
         nom = nouNom;
+        System.out.println();
     }
+
     public void setCapacitat(int novaCapacitat) {
         capacitat = novaCapacitat;
     }
+
     public void setDisponible(boolean novaDisponabilitat) {
         disponible = novaDisponabilitat;
-    } 
-
+    }
 
     public String getNom() {
         return nom;
     }
+
     public int getCapacitat() {
         return capacitat;
     }
+
     public boolean getDisponibilitat() {
         return disponible;
     }
 
-
+    public String getTipusAllotjament() {
+        return tipusAllotjament;
+    }
 
     public double calcularPreuPerNit() {
         System.out.println("No puc calcular cap preu ja que no has especificat quin allotjament vols.");
@@ -63,7 +69,7 @@ public class Allotjament {
     }
 
     public void isDisponible() {
-        if(disponible = true) {
+        if (disponible = true) {
             System.out.println("L'allotjament és disponible");
         } else {
             System.out.println("L'allotjament no és disponible");
