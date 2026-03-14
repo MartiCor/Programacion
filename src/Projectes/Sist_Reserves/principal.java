@@ -64,7 +64,7 @@ public class principal {
                         casa2.reservar();
                     } else {
                         System.out.println(
-                                "Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriur-el sense accents.");
+                                "Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriure'l sense accents.");
                     }
                     System.out.println();
                     break;
@@ -89,7 +89,7 @@ public class principal {
                         casa2.alliberar();
                     } else {
                         System.out.println(
-                                "Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriur-el sense accents.");
+                                "Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriure'l sense accents.");
                     }
                     System.out.println();
                     break;
