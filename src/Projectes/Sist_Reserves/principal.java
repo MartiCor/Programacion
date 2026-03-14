@@ -48,17 +48,23 @@ public class principal {
                     System.out.print("Escriu el nom del allotjament que vols reservar: ");
                     String allotjament = recollir.string().toLowerCase();
                     if (allotjament.equals("habitacio 101")) {
+                        System.out.println("Has reservat l'Habitació 101.");
                         habitacio1.reservar();
                     } else if (allotjament.equals("apartament blue")) {
+                        System.out.println("Has reservat l'Apartament Blue");
                         apartament1.reservar();
                     } else if (allotjament.equals("masia verda")) {
+                        System.out.println("Has reservat Masia Verda");
                         casa1.reservar();
                     } else if (allotjament.equals("habitacio 202")) {
+                        System.out.println("Has reservat l'Habitació 202.");
                         habitacio2.reservar();
                     } else if (allotjament.equals("can soler")) {
+                        System.out.println("Has reservat Can Soler");
                         casa2.reservar();
                     } else {
-                        System.out.println("Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriur-el sense accents.");
+                        System.out.println(
+                                "Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriur-el sense accents.");
                     }
                     System.out.println();
                     break;
@@ -67,17 +73,23 @@ public class principal {
                     System.out.print("Escriu el nom del allotjament reservat que vols alliberar: ");
                     String alliberar = recollir.string().toLowerCase();
                     if (alliberar.equals("habitacio 101")) {
+                        System.out.println("Has alliberat l'Habitació 202");
                         habitacio1.alliberar();
                     } else if (alliberar.equals("apartament blue")) {
+                        System.out.println("Has alliberat l'Apartament Blue.");
                         apartament1.alliberar();
                     } else if (alliberar.equals("masia verda")) {
+                        System.out.println("Has alliberat la Masiva Verda.");
                         casa1.alliberar();
                     } else if (alliberar.equals("habitacio 202")) {
+                        System.out.println("Has alliberat l'Habitació 202.");
                         habitacio2.alliberar();
                     } else if (alliberar.equals("can soler")) {
+                        System.out.println("Has alliberat Can Soler.");
                         casa2.alliberar();
                     } else {
-                        System.out.println("Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriur-el sense accents.");
+                        System.out.println(
+                                "Has introduït el nom del allotjament de forma incorrecte. Revisa que l'hagis escrit be o prova a escriur-el sense accents.");
                     }
                     System.out.println();
                     break;

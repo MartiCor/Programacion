@@ -16,9 +16,10 @@ public class Apartament extends Allotjament {
         this.teCuina = teCuina;
     }
 
-    public void setHabitacions (int novesHabitacions) {
-        habitacions = novesHabitacions;{}
+    public void setHabitacions(int novesHabitacions) {
+        habitacions = novesHabitacions;
     }
+
     public void setCuina(boolean novaCuina) {
         teCuina = novaCuina;
     }
@@ -26,22 +27,21 @@ public class Apartament extends Allotjament {
     public int getHabitacions() {
         return habitacions;
     }
+
     public boolean getCuina() {
         return teCuina;
     }
 
-
-
     public double calcularPreuPerNit(int habitacio) {
-        preu = 100 + (habitacio*10);
+        preu = 100 + (habitacio * 10);
         return preu;
     }
 
-    public String mostrarInformacio(){
+    public String mostrarInformacio() {
         String Nom = getNom();
         String TipusAllotjament = getTipusAllotjament();
         String cuina;
-        if(teCuina == true) {
+        if (teCuina == true) {
             cuina = "Sí";
         } else {
             cuina = "No";

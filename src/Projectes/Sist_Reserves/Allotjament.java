@@ -69,7 +69,7 @@ public class Allotjament {
     }
 
     public void isDisponible() {
-        if (disponible = true) {
+        if (disponible == true) {
             System.out.println("L'allotjament és disponible");
         } else {
             System.out.println("L'allotjament no és disponible");
