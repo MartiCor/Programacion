@@ -123,8 +123,8 @@ public class Examen2 {
             double notaMit = calculador.calcularMitjana(notes, NUM_NOTES);
             String text = transformar.notaAText(notaMit);
             ImprimirResultat(notaMit, text, "MIT");
-        } else if (opcio.equals("fi")) {
-            System.out.println("Gracies per utilitzar el programa.");
+        /*} else if (opcio.equals("fi")) {
+            System.out.println("Gracies per utilitzar el programa.");*/ //TAMPOCO UTILIZO ESTO YA QUE TIENE PARAMETRO DE ENTRADA Y SE ACABA ANTES DE LLAMAR A LA FUNCION ESTA
         } else {
             System.out.println("Opció no vàlida");
         }
