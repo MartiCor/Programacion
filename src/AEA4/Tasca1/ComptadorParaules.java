@@ -37,7 +37,7 @@ public class ComptadorParaules {
             a.close();
             return texto;
         } catch (Exception e) {
-            String error = ("Error: " + e);
+            String error = ("Error: " + e.getMessage());
             return error;
         }
     }
@@ -48,7 +48,7 @@ public class ComptadorParaules {
             return paraules.length;
 
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
             return 0;
         }
     }
@@ -67,7 +67,7 @@ public class ComptadorParaules {
             escriptor.close();
 
         } catch (Exception e) {
-            System.out.println("Error escrivint l'arxiu: " + e);
+            System.out.println("Error escrivint l'arxiu: " + e.getMessage());
         }
     }
 }
