@@ -30,6 +30,8 @@ public class RegistreTemperatures {
             System.out.println("Error: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
+        } finally {
+            System.out.println("El programa ha finalitzat, gracies per utilitzar-lo");
         }
     }
 
