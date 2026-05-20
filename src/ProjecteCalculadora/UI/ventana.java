@@ -8,6 +8,8 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicButtonUI;
 
+import ProjecteCalculadora.Back.CalculadoraBackend;
+
 public class ventana extends JFrame {
 
     private static final int UI_AMPLADA = 520;
@@ -24,6 +26,7 @@ public class ventana extends JFrame {
     private static final int RESERVA_ALÇADA_CLIENT = 52;
 
     private JTextField pantalla;
+    private JTextField pantallaHistorial;
 
     public ventana() {
         this.setSize(UI_AMPLADA, UI_ALTURA);
@@ -39,22 +42,37 @@ public class ventana extends JFrame {
         this.getContentPane().add(panel);
 
         int ampleTeclat = UI_AMPLADA - 2 * MARGE - RESERVA_AMPLADA_CLIENT;
+
+        pantallaHistorial = new JTextField("");
+        pantallaHistorial.setBounds(MARGE, MARGE, ampleTeclat, 30);
+        pantallaHistorial.setBackground(Color.BLACK);
+        pantallaHistorial.setForeground(new Color(160, 160, 160)); // color gris claro
+        pantallaHistorial.setCaretColor(Color.BLACK);
+        pantallaHistorial.setHorizontalAlignment(SwingConstants.RIGHT);
+        pantallaHistorial.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 18));
+        pantallaHistorial.setBorder(BorderFactory.createEmptyBorder(2, 12, 0, 16));
+        pantallaHistorial.setOpaque(true);
+        pantallaHistorial.setEditable(false);
+        panel.add(pantallaHistorial);
+
         pantalla = new JTextField("0");
-        pantalla.setBounds(MARGE, MARGE, ampleTeclat, PANTALLA_ALT);
+        pantalla.setBounds(MARGE, MARGE + 30, ampleTeclat, PANTALLA_ALT - 30);
         pantalla.setBackground(Color.BLACK);
         pantalla.setForeground(Color.WHITE);
         pantalla.setCaretColor(Color.WHITE);
         pantalla.setHorizontalAlignment(SwingConstants.RIGHT);
         pantalla.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 38));
-        pantalla.setBorder(BorderFactory.createEmptyBorder(4, 12, 4, 16));
+        pantalla.setBorder(BorderFactory.createEmptyBorder(0, 12, 4, 16));
         pantalla.setOpaque(true);
         pantalla.setEditable(false);
         panel.add(pantalla);
 
-        afegirBotonsEnReixa(panel);
+        CalculadoraBackend backend = new CalculadoraBackend(pantalla, pantallaHistorial);
+
+        afegirBotonsEnReixa(panel, backend);
     }
 
-    private void afegirBotonsEnReixa(JPanel panel) {
+    private void afegirBotonsEnReixa(JPanel panel, CalculadoraBackend backend) {
         final int cols = 4;
         final int files = 5;
 
@@ -70,10 +88,10 @@ public class ventana extends JFrame {
 
         String[][] teclas = {
                 { "AC", "+/-", "%", "/" },
-                { "7", "8", "9", "X" },
+                { "7", "8", "9", "x" },
                 { "4", "5", "6", "-" },
                 { "1", "2", "3", "+" },
-                { ":)", "0", ",", "=" },
+                { "\u232B", "0", ",", "=" },
         };
 
         for (int fila = 0; fila < teclas.length; fila++) {
@@ -84,8 +102,8 @@ public class ventana extends JFrame {
                         text.equals("9") || text.equals("4") || text.equals("5") ||
                         text.equals("6") || text.equals("1") || text.equals("2") ||
                         text.equals("3") || text.equals("0") || text.equals(",") ||
-                        text.equals("X") || text.equals("-") || text.equals("+") ||
-                        text.equals("=") || text.equals("/") || text.equals(":)") ? new BotoAcCercle(text)
+                        text.equals("x") || text.equals("-") || text.equals("+") ||
+                        text.equals("=") || text.equals("/") || text.equals("\u232B") ? new BotoAcCercle(text)
                                 : new JButton(text);
                 boto.setBounds(origenX + col * pasX, origenY + fila * pasY, amplada, alcada);
                 boto.setActionCommand(text);
@@ -95,14 +113,15 @@ public class ventana extends JFrame {
                         || text.equals("5") || text.equals("6") || text.equals("1") || text.equals("2")
                         || text.equals("3") || text.equals("0") || text.equals(",")) {
                     personalitzarBotoFosc(boto);
-                } else if (text.equals("X") || text.equals("-") || text.equals("+") || text.equals("=")
-                        || text.equals(":)") || text.equals("/")) {
+                } else if (text.equals("x") || text.equals("-") || text.equals("+") || text.equals("=")
+                        || text.equals("\u232B") || text.equals("/")) {
                     personalitzarBotoTaronja(boto);
                 } else {
 
                 }
                 panel.add(boto);
                 registrarEfecteRatoli(boto);
+                backend.asignarListener(boto);
             }
         }
     }
