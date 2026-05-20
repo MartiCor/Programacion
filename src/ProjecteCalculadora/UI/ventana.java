@@ -126,12 +126,7 @@ public class ventana extends JFrame {
         }
     }
 
-    /**
-     * Ilumina una mica el fons en passar el ratolí i el fosc mentre el botó està
-     * premut
-     * (el model de Swing actualitza isPressed encara que es deixi anar fora del
-     * botó).
-     */
+    
     private void registrarEfecteRatoli(JButton boto) {
         final Color base = boto.getBackground() != null ? boto.getBackground() : new Color(200, 200, 200);
         boto.setBackground(base);
@@ -210,11 +205,7 @@ public class ventana extends JFrame {
         boto.setBorder(marge);
     }
 
-    /**
-     * Botó AC amb forma circular. El fons es pinta aquí (abans del text) perquè
-     * un {@code Border} que omple el cercle es dibuixa després del text i el
-     * tapava.
-     */
+    // Hacer el boton Redondo
     private static class BotoAcCercle extends JButton {
 
         BotoAcCercle(String text) {

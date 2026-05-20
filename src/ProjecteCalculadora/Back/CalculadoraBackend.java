@@ -21,14 +21,8 @@ public class CalculadoraBackend {
         this.pantallaHistorial = pantallaHistorial;
     }
 
-    /**
-     * Este método recibe un botón, mira su texto y le asigna 
-     * su listener individual y personalizado.
-     */
     public void asignarListener(JButton boto) {
         String texto = boto.getText();
-
-        // 1. LISTENERS PARA NÚMEROS Y COMA
         if ((texto.charAt(0) >= '0' && texto.charAt(0) <= '9') || texto.equals(",")) {
             boto.addActionListener(new ActionListener() {
                 @Override
@@ -61,7 +55,6 @@ public class CalculadoraBackend {
                 }
             });
         }
-        // 2. LISTENER PARA EL BOTÓN "AC"
         else if (texto.equals("AC")) {
             boto.addActionListener(new ActionListener() {
                 @Override
@@ -75,29 +68,25 @@ public class CalculadoraBackend {
                 }
             });
         }
-        // 3. LISTENER PARA EL BOTÓN "+/-"
         else if (texto.equals("+/-")) {
             boto.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     if (primerOperandoStr.equals("Error")) return;
-
                     if (historialStr.endsWith("=")) {
                         historialStr = "";
                     }
-
                     if (!operador.isEmpty() && !segundoOperandoStr.isEmpty()) {
-                        double val = parseDouble(segundoOperandoStr) * -1;
-                        segundoOperandoStr = formatDouble(val);
+                        double val = ConvertirDouble(segundoOperandoStr) * -1;
+                        segundoOperandoStr = ConvertirString(val);
                     } else if (operador.isEmpty()) {
-                        double val = parseDouble(primerOperandoStr) * -1;
-                        primerOperandoStr = formatDouble(val);
+                        double val = ConvertirDouble(primerOperandoStr) * -1;
+                        primerOperandoStr = ConvertirString(val);
                     }
                     actualitzarPantalla();
                 }
             });
         }
-        // 4. LISTENER PARA EL BOTÓN "%"
         else if (texto.equals("%")) {
             boto.addActionListener(new ActionListener() {
                 @Override
@@ -109,19 +98,19 @@ public class CalculadoraBackend {
                     }
 
                     if (!operador.isEmpty() && !segundoOperandoStr.isEmpty()) {
-                        double val = parseDouble(segundoOperandoStr) / 100;
-                        segundoOperandoStr = formatDouble(val);
+                        double val = ConvertirDouble(segundoOperandoStr) / 100;
+                        segundoOperandoStr = ConvertirString(val);
                         nuevoNumero = true;
                     } else if (operador.isEmpty()) {
-                        double val = parseDouble(primerOperandoStr) / 100;
-                        primerOperandoStr = formatDouble(val);
+                        double val = ConvertirDouble(primerOperandoStr) / 100;
+                        primerOperandoStr = ConvertirString(val);
                         nuevoNumero = true;
                     }
                     actualitzarPantalla();
                 }
             });
         }
-        // 5. LISTENER PARA EL BOTÓN "DEL"
+
         else if (texto.equals("\u232B")) {
             boto.addActionListener(new ActionListener() {
                 @Override
@@ -133,18 +122,14 @@ public class CalculadoraBackend {
                         actualitzarPantalla();
                         return;
                     }
-
                     if (historialStr.endsWith("=")) {
                         historialStr = "";
                     }
-
                     if (nuevoNumero && !operador.isEmpty() && segundoOperandoStr.isEmpty()) {
-                        // Cancelar la operación activa y mantener el primer operando editable
                         operador = "";
                         historialStr = "";
                         nuevoNumero = false;
                     } else if (!operador.isEmpty()) {
-                        // Borrar el último dígito del segundo operando
                         if (!segundoOperandoStr.isEmpty()) {
                             segundoOperandoStr = segundoOperandoStr.substring(0, segundoOperandoStr.length() - 1);
                             if (segundoOperandoStr.isEmpty() || segundoOperandoStr.equals("-")) {
@@ -155,7 +140,6 @@ public class CalculadoraBackend {
                             }
                         }
                     } else {
-                        // Borrar el último dígito del primer operando
                         if (!primerOperandoStr.equals("0")) {
                             primerOperandoStr = primerOperandoStr.substring(0, primerOperandoStr.length() - 1);
                             if (primerOperandoStr.isEmpty() || primerOperandoStr.equals("-")) {
@@ -170,7 +154,7 @@ public class CalculadoraBackend {
                 }
             });
         }
-        // 6. LISTENER PARA EL BOTÓN "="
+
         else if (texto.equals("=")) {
             boto.addActionListener(new ActionListener() {
                 @Override
@@ -183,7 +167,7 @@ public class CalculadoraBackend {
                 }
             });
         }
-        // 7. LISTENERS INDIVIDUALES PARA LOS OPERADORES (+, -, X, /)
+        /// Operaciones
         else {
             boto.addActionListener(new ActionListener() {
                 @Override
@@ -209,7 +193,7 @@ public class CalculadoraBackend {
         }
     }
 
-    // --- Métodos de operaciones matemáticas auxiliares ---
+
 
     private void actualitzarPantalla() {
         if (operador.isEmpty()) {
@@ -228,11 +212,11 @@ public class CalculadoraBackend {
 
     private void realizarCalculo() {
         try {
-            double op1 = parseDouble(primerOperandoStr);
-            double op2 = parseDouble(segundoOperandoStr);
+            double op1 = ConvertirDouble(primerOperandoStr);
+            double op2 = ConvertirDouble(segundoOperandoStr);
             double result = calcularValores(op1, operador, op2);
             historialStr = primerOperandoStr + " " + operador + " " + segundoOperandoStr + " =";
-            primerOperandoStr = formatDouble(result);
+            primerOperandoStr = ConvertirString(result);
             operador = "";
             segundoOperandoStr = "";
             nuevoNumero = true;
@@ -248,10 +232,10 @@ public class CalculadoraBackend {
 
     private void realizarCalculoIntermedio(String newOperator) {
         try {
-            double op1 = parseDouble(primerOperandoStr);
-            double op2 = parseDouble(segundoOperandoStr);
+            double op1 = ConvertirDouble(primerOperandoStr);
+            double op2 = ConvertirDouble(segundoOperandoStr);
             double result = calcularValores(op1, operador, op2);
-            primerOperandoStr = formatDouble(result);
+            primerOperandoStr = ConvertirString(result);
             operador = newOperator;
             segundoOperandoStr = "";
             historialStr = primerOperandoStr + " " + operador;
@@ -281,7 +265,7 @@ public class CalculadoraBackend {
         }
     }
 
-    private double parseDouble(String str) {
+    private double ConvertirDouble(String str) {
         try {
             return Double.parseDouble(str.replace(",", "."));
         } catch (Exception e) {
@@ -289,7 +273,7 @@ public class CalculadoraBackend {
         }
     }
 
-    private String formatDouble(double res) {
+    private String ConvertirString(double res) {
         if (res == (long) res) {
             return String.valueOf((long) res);
         } else {
