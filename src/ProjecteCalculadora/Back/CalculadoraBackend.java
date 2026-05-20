@@ -178,7 +178,6 @@ public class CalculadoraBackend {
                         if (!segundoOperandoStr.isEmpty()) {
                             realizarCalculoIntermedio(texto);
                         } else {
-                            // Cambiar operador activo
                             operador = texto;
                             historialStr = primerOperandoStr + " " + operador;
                         }
